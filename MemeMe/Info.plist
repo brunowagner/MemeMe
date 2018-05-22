@@ -24,6 +24,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera is need to take new photo to make your Meme</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>The apps need acess your Photo Library to get a photo make a Meme</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
