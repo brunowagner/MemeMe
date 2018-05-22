@@ -51,7 +51,7 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-cR-p0a">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" borderStyle="roundedRect" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-cR-p0a">
                                 <rect key="frame" x="111.5" y="376" width="97.5" height="30"/>
                                 <attributedString key="attributedText">
                                     <fragment content="BOTTOM">
@@ -83,6 +83,8 @@
                     <connections>
                         <outlet property="cameraButton" destination="Ulh-fQ-vOz" id="XSl-AQ-I9B"/>
                         <outlet property="imagePickerView" destination="VRw-pO-3Px" id="fqV-ml-sRh"/>
+                        <outlet property="textFieldBottom" destination="L0L-cR-p0a" id="ICQ-rs-kNs"/>
+                        <outlet property="textFieldTop" destination="KYE-rB-mfl" id="hn4-AL-JAt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

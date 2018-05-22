@@ -12,10 +12,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var textFieldTop: UITextField!
+    @IBOutlet weak var textFieldBottom: UITextField!
+    
+    let textFieldDelegate = TextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        textFieldTop.delegate = textFieldDelegate
+        textFieldBottom.delegate = textFieldDelegate
     }
 
     override func viewWillAppear(_ animated: Bool) {
