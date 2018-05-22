@@ -36,7 +36,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Fyx-ko-Rx8"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VRw-pO-3Px">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VRw-pO-3Px">
                                 <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                                 <color key="backgroundColor" red="0.44207904691862931" green="1" blue="0.35895282831949082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
