@@ -20,6 +20,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        textFieldTop.text = "TOP"
+        textFieldBottom.text = "BOTTOM"
+        textFieldTop.textAlignment = .center
+        textFieldBottom.textAlignment = .center
         textFieldTop.delegate = textFieldDelegate
         textFieldBottom.delegate = textFieldDelegate
     }
