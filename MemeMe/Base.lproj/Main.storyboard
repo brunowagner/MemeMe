@@ -54,6 +54,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="Ulh-fQ-vOz" id="XSl-AQ-I9B"/>
                         <outlet property="imagePickerView" destination="VRw-pO-3Px" id="fqV-ml-sRh"/>
                     </connections>
                 </viewController>
