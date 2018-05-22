@@ -23,6 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Item" id="Ulh-fQ-vOz"/>
+                                    <barButtonItem title="Item" id="8zP-xQ-Sp6"/>
                                 </items>
                             </toolbar>
                         </subviews>
