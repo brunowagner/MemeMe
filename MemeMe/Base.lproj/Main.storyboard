@@ -22,8 +22,11 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" id="Ulh-fQ-vOz"/>
-                                    <barButtonItem title="Item" id="8zP-xQ-Sp6"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cRW-2K-ZX3"/>
+                                    <barButtonItem systemItem="camera" id="Ulh-fQ-vOz"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="jFl-vn-a9M"/>
+                                    <barButtonItem title="Album" id="8zP-xQ-Sp6"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Fyx-ko-Rx8"/>
                                 </items>
                             </toolbar>
                         </subviews>
