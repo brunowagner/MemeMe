@@ -31,14 +31,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Do any additional setup after loading the view, typically from a nib.
         textFieldTop.text = "TOP"
         textFieldBottom.text = "BOTTOM"
-        textFieldTop.textAlignment = .right
-        textFieldBottom.textAlignment = .center
+
         textFieldTop.delegate = textFieldDelegate
         textFieldBottom.delegate = textFieldDelegate
         textFieldTop.defaultTextAttributes = memeTextAttributes
         textFieldBottom.defaultTextAttributes = memeTextAttributes
         textFieldTop.backgroundColor = UIColor.clear
         textFieldBottom.backgroundColor = UIColor.clear
+        textFieldTop.textAlignment = .center
+        textFieldBottom.textAlignment = .center
     }
 
     override func viewWillAppear(_ animated: Bool) {
