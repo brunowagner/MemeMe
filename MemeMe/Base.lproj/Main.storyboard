@@ -48,7 +48,9 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVB-7a-fEN" userLabel="ToolbarTop">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="UpB-1g-Yzo"/>
+                                    <barButtonItem systemItem="action" id="UpB-1g-Yzo"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="OcR-98-4yy"/>
+                                    <barButtonItem title="Cancel" id="bJT-qh-1j5"/>
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="KYE-rB-mfl">
