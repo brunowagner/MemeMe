@@ -101,6 +101,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func getKeyboardHeight(_ notification : Notification) -> CGFloat{
+        guard textFieldBottom.isFirstResponder else {
+            return 0
+        }
+
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
