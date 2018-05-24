@@ -40,6 +40,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textFieldBottom.backgroundColor = UIColor.clear
         textFieldTop.textAlignment = .center
         textFieldBottom.textAlignment = .center
+        textFieldTop.borderStyle = .none
+        textFieldBottom.borderStyle = .none
     }
 
     override func viewWillAppear(_ animated: Bool) {
