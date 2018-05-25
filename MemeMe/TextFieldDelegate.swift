@@ -25,4 +25,14 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
             textField.text = ""
         }
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var text : NSString = textField.text! as NSString
+        text = text.replacingCharacters(in: range, with: string) as NSString
+        // limiting text
+        let textSize : CGSize = text.size(withAttributes: [NSAttributedStringKey.font : textField.font!])
+        
+        return textSize.width < textField.bounds.size.width ? true : false
+    }
+
 }

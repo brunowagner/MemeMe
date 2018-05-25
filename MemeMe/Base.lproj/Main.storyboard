@@ -42,8 +42,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VRw-pO-3Px">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-cR-p0a">
-                                <rect key="frame" x="174.5" y="563" width="26" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-cR-p0a">
+                                <rect key="frame" x="0.0" y="563" width="375" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -67,10 +67,9 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="KYE-rB-mfl">
-                                <rect key="frame" x="174.5" y="94" width="26" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="KYE-rB-mfl">
+                                <rect key="frame" x="0.0" y="94" width="375" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
@@ -86,8 +85,10 @@
                             <constraint firstItem="KYE-rB-mfl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PcG-Vv-hRA"/>
                             <constraint firstItem="KVB-7a-fEN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Pgf-Zv-Uca"/>
                             <constraint firstItem="KVB-7a-fEN" firstAttribute="leading" secondItem="VRw-pO-3Px" secondAttribute="leading" id="Ql4-Iq-TYh"/>
+                            <constraint firstItem="KYE-rB-mfl" firstAttribute="width" secondItem="VRw-pO-3Px" secondAttribute="width" id="RaX-yS-WXW"/>
                             <constraint firstItem="lXb-lN-pYW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b0r-2P-VvD"/>
                             <constraint firstItem="lXb-lN-pYW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c05-wc-903"/>
+                            <constraint firstItem="L0L-cR-p0a" firstAttribute="width" secondItem="VRw-pO-3Px" secondAttribute="width" id="fus-qs-gTv"/>
                             <constraint firstItem="L0L-cR-p0a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gQX-u8-yFE"/>
                             <constraint firstItem="KYE-rB-mfl" firstAttribute="top" secondItem="KVB-7a-fEN" secondAttribute="bottom" constant="30" id="gjS-hV-0d6"/>
                             <constraint firstItem="VRw-pO-3Px" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qbA-6r-nyx"/>
