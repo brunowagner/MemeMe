@@ -8,16 +8,30 @@
 
 import UIKit
 
+struct Meme{
+    var topText : String?
+    var bottomText : String?
+    var originalImage : UIImage?
+    var memedImage : UIImage?
+    
+    static func empty() -> Meme{
+        let memeEmpty = Meme(topText: nil, bottomText: nil, originalImage: nil, memedImage: nil)
+        return memeEmpty
+    }
+}
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var textFieldTop: UITextField!
     @IBOutlet weak var textFieldBottom: UITextField!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    
+    private var meme : Meme = Meme.empty()
     
     let textFieldDelegate = TextFieldDelegate()
     
-
     
     let memeTextAttributes:[String:Any] = [
         NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
@@ -46,6 +60,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        shareButton.isEnabled = imagePickerView.image == nil ? false : true
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscriberToKeyboardNotifications()
     }
@@ -112,8 +127,51 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return keyboardSize.cgRectValue.height
     }
     
+    //MARK: Functions to generate, cancel, save and share meme
     
+    func genereteMemedImage() -> UIImage{
+        //Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return memedImage
+    }
     
+    //MARK: funcao temporaria
+    func save(memedImage memed: UIImage){
+        //create the meme
+        meme = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memed)
+    }
     
+    @IBAction func shareAction(_ sender: UIBarButtonItem){
+        
+        let memedImage = [genereteMemedImage()]
+        //    gerar uma imagem com meme
+        //    definir uma instância do ActivityViewController
+        //    aprovar o memedImage no ActivityViewController como um item de atividade
+        //    apresentar o ActivityViewController
+        
+        let avc = UIActivityViewController(activityItems: memedImage, applicationActivities: nil)
+        
+        present(avc, animated: true, completion: nil)
+        
+        avc.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
+            
+            if completed == true {
+                self.save(memedImage: memedImage[0])
+                print("topText: \(self.meme.topText!)")
+                print("bottomText: \(self.meme.bottomText!)")
+            }
+        }
+    }
+    
+    @IBAction func clearMeme(sender : UIBarButtonItem){
+        meme = Meme.empty()
+        textFieldTop.text = "TOP"
+        textFieldBottom.text = "BOTTOM"
+        imagePickerView.image = nil
+        shareButton.isEnabled = false
+    }
 }
-
