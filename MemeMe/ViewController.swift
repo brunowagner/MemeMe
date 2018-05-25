@@ -29,6 +29,9 @@ struct Constants {
         static let text = "BOTTOM"
         static let id = "TextFieldBottom"
     }
+    
+    static let minimumFontSize : CGFloat = 16.0
+    
     static func isDefaultText(_ textField: UITextField)-> Bool{
         var validate = false
         if textField.restorationIdentifier == Constants.TextFieldTop.id && textField.text?.uppercased() == Constants.TextFieldTop.text{
@@ -179,6 +182,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textFieldBottom.textAlignment = .center
         textFieldTop.borderStyle = .none
         textFieldBottom.borderStyle = .none
+        textFieldTop.adjustsFontSizeToFitWidth = true
+        textFieldBottom.adjustsFontSizeToFitWidth = true
+        textFieldTop.minimumFontSize = Constants.minimumFontSize
+        textFieldBottom.minimumFontSize = Constants.minimumFontSize
         imagePickerView.backgroundColor = UIColor.black
     }
     

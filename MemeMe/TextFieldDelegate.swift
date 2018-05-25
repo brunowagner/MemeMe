@@ -29,10 +29,14 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var text : NSString = textField.text! as NSString
         text = text.replacingCharacters(in: range, with: string) as NSString
-        // limiting text
-        let textSize : CGSize = text.size(withAttributes: [NSAttributedStringKey.font : textField.font!])
-        
-        return textSize.width < textField.bounds.size.width ? true : false
-    }
 
+        //to limit text at textfield dynamically
+        let textSize : CGSize = text.size(withAttributes: [NSAttributedStringKey.font : textField.font!])
+        let textSizeOk = textSize.width < textField.bounds.size.width ? true : false
+        
+        //to write big words without stop by textField bounds
+        let fontSizeOk = textField.font!.pointSize > Constants.minimumFontSize ? true : false
+
+        return fontSizeOk || textSizeOk ? true : false
+    }
 }
