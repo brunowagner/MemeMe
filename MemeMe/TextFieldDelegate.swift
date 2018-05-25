@@ -12,17 +12,17 @@ import UIKit
 class TextFieldDelegate: NSObject, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        //Remove default text
-        if textField.text?.lowercased() == "top"{
-            textField.text = ""
-        }
-        if textField.text?.lowercased() == "bottom"{
-            textField.text = ""
-        }
+        removeDefaultText(textField)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func removeDefaultText(_ textField: UITextField){
+        if Constants.isDefaultText(textField){
+            textField.text = ""
+        }
     }
 }
