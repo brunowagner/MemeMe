@@ -70,21 +70,22 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="KYE-rB-mfl">
                                 <rect key="frame" x="20" y="94" width="335" height="30"/>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lXb-lN-pYW" firstAttribute="top" secondItem="VRw-pO-3Px" secondAttribute="bottom" id="6mM-UO-Ftg"/>
+                            <constraint firstItem="VRw-pO-3Px" firstAttribute="bottom" secondItem="lXb-lN-pYW" secondAttribute="top" id="6mM-UO-Ftg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lXb-lN-pYW" secondAttribute="trailing" id="9v8-wY-wJ5"/>
                             <constraint firstItem="KVB-7a-fEN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K6y-mb-sKb"/>
-                            <constraint firstItem="lXb-lN-pYW" firstAttribute="top" secondItem="L0L-cR-p0a" secondAttribute="bottom" constant="30" id="K93-LC-23Q"/>
+                            <constraint firstItem="L0L-cR-p0a" firstAttribute="bottom" secondItem="lXb-lN-pYW" secondAttribute="top" constant="-30" id="K93-LC-23Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VRw-pO-3Px" secondAttribute="trailing" id="OQS-7m-ZIl"/>
                             <constraint firstItem="VRw-pO-3Px" firstAttribute="top" secondItem="KVB-7a-fEN" secondAttribute="bottom" id="OQl-K2-UeA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lXb-lN-pYW" secondAttribute="bottom" id="PUh-kD-hbU"/>
+                            <constraint firstItem="lXb-lN-pYW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PUh-kD-hbU"/>
                             <constraint firstItem="KYE-rB-mfl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PcG-Vv-hRA"/>
                             <constraint firstItem="KVB-7a-fEN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Pgf-Zv-Uca"/>
-                            <constraint firstItem="KVB-7a-fEN" firstAttribute="leading" secondItem="VRw-pO-3Px" secondAttribute="leading" id="Ql4-Iq-TYh"/>
+                            <constraint firstItem="KVB-7a-fEN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ql4-Iq-TYh"/>
                             <constraint firstItem="KYE-rB-mfl" firstAttribute="width" secondItem="VRw-pO-3Px" secondAttribute="width" constant="-40" id="RaX-yS-WXW"/>
                             <constraint firstItem="lXb-lN-pYW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b0r-2P-VvD"/>
                             <constraint firstItem="lXb-lN-pYW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c05-wc-903"/>
@@ -92,6 +93,7 @@
                             <constraint firstItem="L0L-cR-p0a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gQX-u8-yFE"/>
                             <constraint firstItem="KYE-rB-mfl" firstAttribute="top" secondItem="KVB-7a-fEN" secondAttribute="bottom" constant="30" id="gjS-hV-0d6"/>
                             <constraint firstItem="VRw-pO-3Px" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qbA-6r-nyx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KVB-7a-fEN" secondAttribute="trailing" id="rXu-7c-WKb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -101,6 +103,8 @@
                         <outlet property="shareButton" destination="UpB-1g-Yzo" id="Rqj-10-UZm"/>
                         <outlet property="textFieldBottom" destination="L0L-cR-p0a" id="ICQ-rs-kNs"/>
                         <outlet property="textFieldTop" destination="KYE-rB-mfl" id="hn4-AL-JAt"/>
+                        <outlet property="toolBarBottom" destination="lXb-lN-pYW" id="ptP-bU-8PN"/>
+                        <outlet property="toolBarTop" destination="KVB-7a-fEN" id="0WO-cm-6Ym"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

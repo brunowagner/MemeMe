@@ -39,4 +39,6 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
 
         return fontSizeOk || textSizeOk ? true : false
     }
+    
+    
 }
