@@ -97,7 +97,7 @@ class ViewController: UIViewController {
         meme = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memed)
     }
     
-    //MARK: Functions to keep code clean
+    //MARK: Functions to keep code clean and
     
     private func configureUI(){
         textFieldTop.delegate = textFieldDelegate
