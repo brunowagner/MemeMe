@@ -73,8 +73,9 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
     }
     
     func unSubscriberToKeyboardNotifications(){
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        //Notifications can be removeds one by one or all at once
+        //Following sugestions, i changed to remove all at once.
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc func keyboardWillShow(_ notification : Notification){

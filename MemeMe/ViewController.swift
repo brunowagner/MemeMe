@@ -34,8 +34,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
-        initialState()
+        configureUI(textField: textFieldTop)
+        configureUI(textField: textFieldBottom)
+        initialState(textField: textFieldTop, withText: Constants.TextFieldTop.text, withId: Constants.TextFieldTop.id)
+        initialState(textField: textFieldBottom, withText: Constants.TextFieldBottom.text, withId: Constants.TextFieldBottom.id)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +68,7 @@ class ViewController: UIViewController {
         
         controller.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
             
-            if completed == true {
+            if completed {
                 self.save(memedImage: memedImage[0])
             }
         }
@@ -74,7 +76,8 @@ class ViewController: UIViewController {
     
     @IBAction func clearMeme(sender : UIBarButtonItem){
         meme = Meme.empty()
-        initialState()
+        initialState(textField: textFieldTop, withText: Constants.TextFieldTop.text, withId: Constants.TextFieldTop.id)
+        initialState(textField: textFieldBottom, withText: Constants.TextFieldBottom.text, withId: Constants.TextFieldBottom.id)
     }
     
     //MARK: Functions to generate and save meme
@@ -99,29 +102,20 @@ class ViewController: UIViewController {
     
     //MARK: Functions to keep code clean and
     
-    private func configureUI(){
-        textFieldTop.delegate = textFieldDelegate
-        textFieldBottom.delegate = textFieldDelegate
-        textFieldTop.defaultTextAttributes = memeTextAttributes
-        textFieldBottom.defaultTextAttributes = memeTextAttributes
-        textFieldTop.backgroundColor = UIColor.clear
-        textFieldBottom.backgroundColor = UIColor.clear
-        textFieldTop.textAlignment = .center
-        textFieldBottom.textAlignment = .center
-        textFieldTop.borderStyle = .none
-        textFieldBottom.borderStyle = .none
-        textFieldTop.adjustsFontSizeToFitWidth = true
-        textFieldBottom.adjustsFontSizeToFitWidth = true
-        textFieldTop.minimumFontSize = Constants.minimumFontSize
-        textFieldBottom.minimumFontSize = Constants.minimumFontSize
+    private func configureUI(textField : UITextField){
+        textField.delegate = textFieldDelegate
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.backgroundColor = UIColor.clear
+        textField.textAlignment = .center
+        textField.borderStyle = .none
+        textField.adjustsFontSizeToFitWidth = true
+        textField.minimumFontSize = Constants.minimumFontSize
         imagePickerView.backgroundColor = UIColor.black
     }
     
-    private func initialState(){
-        textFieldTop.text = Constants.TextFieldTop.text
-        textFieldBottom.text = Constants.TextFieldBottom.text
-        textFieldTop.restorationIdentifier = Constants.TextFieldTop.id
-        textFieldBottom.restorationIdentifier = Constants.TextFieldBottom.id
+    private func initialState(textField : UITextField, withText text: String, withId id: String){
+        textField.text = text
+        textField.restorationIdentifier = id
         imagePickerView.image = nil
         shareButton.isEnabled = false
     }
