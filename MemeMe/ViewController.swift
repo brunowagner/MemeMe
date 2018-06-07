@@ -98,6 +98,9 @@ class ViewController: UIViewController {
     func save(memedImage memed: UIImage){
         //save meme
         meme = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memed)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     //MARK: Functions to keep code clean and
