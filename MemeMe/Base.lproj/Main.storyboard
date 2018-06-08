@@ -163,7 +163,7 @@
         <!--Detail View Controller-->
         <scene sceneID="zbI-GR-EBL">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="81O-eJ-p6h" userLabel="Detail View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="81O-eJ-p6h" userLabel="Detail View Controller" customClass="DetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S4u-J9-9x4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,6 +181,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gFi-N3-igG"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="f1n-Yj-EzB" id="cz3-V0-JlZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FmD-M7-8bV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
