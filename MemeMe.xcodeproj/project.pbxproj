@@ -13,6 +13,7 @@
 		3954909620B398AB0077CB1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3954909420B398AB0077CB1E /* Main.storyboard */; };
 		3954909820B398AC0077CB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3954909720B398AC0077CB1E /* Assets.xcassets */; };
 		3954909B20B398AC0077CB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3954909920B398AC0077CB1E /* LaunchScreen.storyboard */; };
+		399F846C20C9FBD4005A874D /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399F846B20C9FBD4005A874D /* SentMemesTableViewController.swift */; };
 		39F35A8420B4D36900E9B570 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F35A8320B4D36900E9B570 /* TextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		3954909720B398AC0077CB1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3954909A20B398AC0077CB1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3954909C20B398AC0077CB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		399F846B20C9FBD4005A874D /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
 		39F35A8320B4D36900E9B570 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 				3954909C20B398AC0077CB1E /* Info.plist */,
 				39F35A8320B4D36900E9B570 /* TextFieldDelegate.swift */,
 				3905CE7C20BCAC3C0077D9AA /* viewControllerExtension.swift */,
+				399F846B20C9FBD4005A874D /* SentMemesTableViewController.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				3905CE7D20BCAC3C0077D9AA /* viewControllerExtension.swift in Sources */,
 				3954909320B398AB0077CB1E /* ViewController.swift in Sources */,
 				3954909120B398AB0077CB1E /* AppDelegate.swift in Sources */,
+				399F846C20C9FBD4005A874D /* SentMemesTableViewController.swift in Sources */,
 				39F35A8420B4D36900E9B570 /* TextFieldDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
