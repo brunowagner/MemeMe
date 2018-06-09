@@ -12,22 +12,16 @@ import UIKit
 class SentMemesTableViewController : UITableViewController{
     
     let memes = (UIApplication.shared.delegate as! AppDelegate).memes
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.rightBarButtonItem?.isEnabled = true
-    }
+
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SentMemesTableViewCell")
-        cell?.imageView?.image = memes[indexPath.row].memedImage
-        return cell!
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "SentMemesTableViewCell")!
+        cell.imageView!.image = memes[indexPath.row].memedImage
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -35,6 +29,4 @@ class SentMemesTableViewController : UITableViewController{
         datailViewController.meme = memes[indexPath.row]
         navigationController?.pushViewController(datailViewController, animated: true)
     }
-    
-    
 }
