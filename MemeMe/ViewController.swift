@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         initialState(textField: textFieldTop, withText: Constants.TextFieldTop.text, withId: Constants.TextFieldTop.id)
         initialState(textField: textFieldBottom, withText: Constants.TextFieldBottom.text, withId: Constants.TextFieldBottom.id)
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -74,10 +75,11 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func clearMeme(sender : UIBarButtonItem){
-        meme = Meme.empty()
-        initialState(textField: textFieldTop, withText: Constants.TextFieldTop.text, withId: Constants.TextFieldTop.id)
-        initialState(textField: textFieldBottom, withText: Constants.TextFieldBottom.text, withId: Constants.TextFieldBottom.id)
+    @IBAction func cancel(sender : UIBarButtonItem){
+//        meme = Meme.empty()
+//        initialState(textField: textFieldTop, withText: Constants.TextFieldTop.text, withId: Constants.TextFieldTop.id)
+//        initialState(textField: textFieldBottom, withText: Constants.TextFieldBottom.text, withId: Constants.TextFieldBottom.id)
+        self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: Functions to generate and save meme
@@ -127,4 +129,6 @@ class ViewController: UIViewController {
         toolBarTop.isHidden = hide
         toolBarBottom.isHidden = hide
     }
+    
+    
 }
