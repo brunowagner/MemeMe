@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func cancel(sender : UIBarButtonItem){
+    @IBAction func cancel(_ sender : UIBarButtonItem){
 //        meme = Meme.empty()
 //        initialState(textField: textFieldTop, withText: Constants.TextFieldTop.text, withId: Constants.TextFieldTop.id)
 //        initialState(textField: textFieldBottom, withText: Constants.TextFieldBottom.text, withId: Constants.TextFieldBottom.id)
