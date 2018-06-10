@@ -51,6 +51,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sent Meme" id="b8f-aP-nqs">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="mbF-fa-8m2"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="F1O-gV-vjH">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="xB6-ok-DZy"/>
