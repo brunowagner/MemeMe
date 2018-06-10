@@ -51,10 +51,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sent Meme" id="b8f-aP-nqs">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="mbF-fa-8m2"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="mbF-fa-8m2">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="SegueEditMeme" id="BW1-PT-Wcn"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="F1O-gV-vjH">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="xB6-ok-DZy"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="SegueNewMeme" id="xB6-ok-DZy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -216,4 +220,7 @@
             <point key="canvasLocation" x="422" y="838"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BW1-PT-Wcn"/>
+    </inferredMetricsTieBreakers>
 </document>

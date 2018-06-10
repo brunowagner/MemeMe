@@ -38,4 +38,5 @@ class SentMemesTableViewController : UITableViewController{
         datailViewController.meme = self.memes[indexPath.row]
         navigationController?.pushViewController(datailViewController, animated: true)
     }
+
 }
