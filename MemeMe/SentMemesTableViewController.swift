@@ -38,5 +38,17 @@ class SentMemesTableViewController : UITableViewController{
         datailViewController.meme = self.memes[indexPath.row]
         navigationController?.pushViewController(datailViewController, animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let memeEditorVC = segue.destination as! ViewController
+        
+        switch segue.identifier {
+
+        case "SegueEditMeme":
+            memeEditorVC.meme = self.memes[0]
+            break
+        default: break //do not set meme in viewController
+        }
+    }
 
 }

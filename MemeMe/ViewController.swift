@@ -22,7 +22,8 @@ class ViewController: UIViewController {
     
     //MARK: Properties
     
-    private var meme : Meme = Meme.empty()
+    public var meme : Meme = Meme.new()//Meme.empty()
+    public var newMeme : Bool = true
     private let textFieldDelegate = TextFieldDelegate()
     private let memeTextAttributes:[String:Any] = [
         NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
@@ -34,10 +35,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI(textField: textFieldTop)
-        configureUI(textField: textFieldBottom)
-        initialState(textField: textFieldTop, withText: Constants.TextFieldTop.text, withId: Constants.TextFieldTop.id)
-        initialState(textField: textFieldBottom, withText: Constants.TextFieldBottom.text, withId: Constants.TextFieldBottom.id)
+        configureUI(textField: textFieldTop, whitId: Constants.TextFieldTop.id)
+        configureUI(textField: textFieldBottom, whitId: Constants.TextFieldBottom.id)
+        initialMeme()
+//        initialState(textField: textFieldTop, withText: Constants.TextFieldTop.text, withId: Constants.TextFieldTop.id)
+//        initialState(textField: textFieldBottom, withText: Constants.TextFieldBottom.text, withId: Constants.TextFieldBottom.id)
     }
 
     
@@ -107,7 +109,7 @@ class ViewController: UIViewController {
     
     //MARK: Functions to keep code clean and
     
-    private func configureUI(textField : UITextField){
+    private func configureUI(textField : UITextField, whitId id: String){
         textField.delegate = textFieldDelegate
         textField.defaultTextAttributes = memeTextAttributes
         textField.backgroundColor = UIColor.clear
@@ -115,7 +117,9 @@ class ViewController: UIViewController {
         textField.borderStyle = .none
         textField.adjustsFontSizeToFitWidth = true
         textField.minimumFontSize = Constants.minimumFontSize
+        textField.restorationIdentifier = id
         imagePickerView.backgroundColor = UIColor.black
+        shareButton.isEnabled = false
     }
     
     private func initialState(textField : UITextField, withText text: String, withId id: String){
@@ -123,6 +127,12 @@ class ViewController: UIViewController {
         textField.restorationIdentifier = id
         imagePickerView.image = nil
         shareButton.isEnabled = false
+    }
+    
+    private func initialMeme(){
+        textFieldTop.text = meme.topText
+        textFieldBottom.text = meme.bottomText
+        imagePickerView.image = meme.originalImage
     }
     
     private func hideToolbars(_ hide: Bool){

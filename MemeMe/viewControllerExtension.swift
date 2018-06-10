@@ -21,6 +21,11 @@ struct Meme{
         let memeEmpty = Meme(topText: nil, bottomText: nil, originalImage: nil, memedImage: nil)
         return memeEmpty
     }
+    
+    static func new() -> Meme{
+        let memeNew = Meme(topText: Constants.TextFieldTop.text, bottomText: Constants.TextFieldBottom.text, originalImage: nil, memedImage: nil)
+        return memeNew
+    }
 }
 
 struct Constants {
