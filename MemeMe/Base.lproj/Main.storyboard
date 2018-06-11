@@ -63,6 +63,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="mbF-fa-8m2" id="sQ6-ht-bRN"/>
+                        <outlet property="myTableView" destination="Iac-bj-EmE" id="BTn-YN-bNw"/>
                         <segue destination="81O-eJ-p6h" kind="show" identifier="SegueDetail" id="ik9-Pr-ZIG"/>
                     </connections>
                 </tableViewController>

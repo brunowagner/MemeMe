@@ -11,15 +11,34 @@ import UIKit
 
 class SentMemesTableViewController : UITableViewController{
     
+    
+    @IBOutlet weak var myTableView : UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    
     let appDelegation = UIApplication.shared.delegate as! AppDelegate
     var memes : [Meme]!
     
     override func viewDidLoad() {
         self.memes = appDelegation.memes
+        editButton.isEnabled = false
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
+        myTableView.addGestureRecognizer(longPress)
+    }
+    
+    @objc func handleLongPress(sender: UILongPressGestureRecognizer){
+        if sender.state == UIGestureRecognizerState.began {
+            let touchPoint = sender.location(in: myTableView)
+            if let indexPath = myTableView.indexPathForRow(at: touchPoint) {
+                myTableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+                editButton.isEnabled = true
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.memes = appDelegation.memes
+        editButton.isEnabled=false
         self.tableView.reloadData()
     }
     
@@ -34,6 +53,9 @@ class SentMemesTableViewController : UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        editButton.isEnabled = false
+
+
         let datailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         datailViewController.meme = self.memes[indexPath.row]
         navigationController?.pushViewController(datailViewController, animated: true)
@@ -45,7 +67,8 @@ class SentMemesTableViewController : UITableViewController{
         switch segue.identifier {
 
         case "SegueEditMeme":
-            memeEditorVC.meme = self.memes[0]
+            let item = myTableView.indexPathForSelectedRow?.row
+            memeEditorVC.meme = self.memes[item!]
             break
         default: break //do not set meme in viewController
         }
