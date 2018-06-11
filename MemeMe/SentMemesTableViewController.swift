@@ -61,6 +61,18 @@ class SentMemesTableViewController : UITableViewController{
         navigationController?.pushViewController(datailViewController, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete{
+            deleteMeme(indexPath)
+        }
+    }
+    
+    func deleteMeme(_ item: IndexPath){
+        appDelegation.memes.remove(at: item.row)
+        self.memes = appDelegation.memes
+        myTableView.deleteRows(at: [item], with: .automatic)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let memeEditorVC = segue.destination as! ViewController
         
