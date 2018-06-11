@@ -17,6 +17,10 @@ class SentMemesCollectionViewController: UICollectionViewController {
         self.memes = self.appDelegate.memes
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.collectionView?.reloadData()
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.memes.count
     }
