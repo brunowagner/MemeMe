@@ -17,6 +17,15 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         imageView.image = meme.memedImage
+        hideTabBar(true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        hideTabBar(false)
+    }
+
+    func hideTabBar(_ chose: Bool){
+        self.tabBarController?.tabBar.isHidden = chose
     }
 
 }
