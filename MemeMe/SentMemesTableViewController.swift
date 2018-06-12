@@ -15,6 +15,7 @@ class SentMemesTableViewController : UITableViewController{
     @IBOutlet weak var myTableView : UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     
+    
     let appDelegation = UIApplication.shared.delegate as! AppDelegate
     var memes : [Meme]!
     
@@ -85,5 +86,7 @@ class SentMemesTableViewController : UITableViewController{
         default: break //do not set meme in viewController
         }
     }
+    
+
 
 }

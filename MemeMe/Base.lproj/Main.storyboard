@@ -250,7 +250,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIe-hg-zoh">
+                                        <imageView userInteractionEnabled="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIe-hg-zoh">
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -268,6 +268,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="7iZ-f2-C5n"/>
                     <connections>
+                        <outlet property="flowLayout" destination="2XV-Ea-d26" id="LR5-uN-Edd"/>
                         <segue destination="81O-eJ-p6h" kind="show" identifier="SegueDetail" id="2Mo-NZ-T86"/>
                     </connections>
                 </collectionViewController>
