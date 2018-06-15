@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 class SentMemesCollectionViewController: UICollectionViewController {
     
+    @IBOutlet weak var myCollectionView : UICollectionView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var flowLayout : UICollectionViewFlowLayout!
+    
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var memes : [Meme]!
@@ -18,10 +21,24 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         self.memes = self.appDelegate.memes
         configureFlow()
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
+        myCollectionView.addGestureRecognizer(longPress)
+    }
+    
+    @objc func handleLongPress(sender: UILongPressGestureRecognizer){
+        if sender.state == UIGestureRecognizerState.began {
+            let touchPoint = sender.location(in: myCollectionView)
+            if let indexPath = myCollectionView.indexPathForItem(at: touchPoint) {
+                myCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init(rawValue: UInt(indexPath.row)))
+                editButton.isEnabled = true
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.memes = self.appDelegate.memes
+        editButton.isEnabled=false
         self.collectionView?.reloadData()
     }
     
@@ -58,9 +75,18 @@ class SentMemesCollectionViewController: UICollectionViewController {
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: width, height: width)
-        
-        
-        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let memeEditorVC = segue.destination as! ViewController
+        
+        switch segue.identifier {
+            
+        case "SegueEditMeme":
+            let indexPath = self.collectionView!.indexPathsForSelectedItems![0]
+            memeEditorVC.meme = self.memes[indexPath.row]
+            break
+        default: break //do not set meme in viewController
+        }
+    }
 }
