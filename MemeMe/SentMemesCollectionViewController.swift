@@ -33,7 +33,10 @@ class SentMemesCollectionViewController: UICollectionViewController {
         
         let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "SentMemesCollectionViewCell", for: indexPath) as! SentMemesCollectionViewCell
         
-        cell.imageView.image = memes[indexPath.row].memedImage
+        cell.imageView.image = memes[indexPath.row].originalImage
+        cell.labelTop.text = memes[indexPath.row].topText
+        cell.labelBottom.text = memes[indexPath.row].bottomText
+        cell.setFontStyle()
         
         return cell
     }
@@ -50,11 +53,11 @@ class SentMemesCollectionViewController: UICollectionViewController {
     func configureFlow(){
         let space : CGFloat = 1.0
         let width = (view.frame.size.width - (2 * space)) / 3.0
-        let height = (view.frame.size.height - space)/4.0
+        //let height = (view.frame.size.height - space)/4.0
         
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSize(width: width, height: height)
+        flowLayout.itemSize = CGSize(width: width, height: width)
         
         
         
