@@ -11,10 +11,8 @@ import UIKit
 
 class SentMemesTableViewController : UITableViewController{
     
-    
     @IBOutlet weak var myTableView : UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
-    
     
     let appDelegation = UIApplication.shared.delegate as! AppDelegate
     var memes : [Meme]!
@@ -50,12 +48,18 @@ class SentMemesTableViewController : UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "SentMemesTableViewCell")!
         cell.imageView!.image = self.memes[indexPath.row].memedImage
+//        configureCell(cell)
         return cell
     }
     
+//    func configureCell(_ cell: UITableViewCell){
+//        let width = (view.frame.size.width) / 3
+//        cell.imageView?.frame.size = CGSize(width: width, height: width)
+//        cell.imageView?.contentMode = .scaleAspectFill
+//    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         editButton.isEnabled = false
-
 
         let datailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         datailViewController.meme = self.memes[indexPath.row]
