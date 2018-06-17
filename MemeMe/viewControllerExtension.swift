@@ -11,46 +11,7 @@ import UIKit
 
 //MARK: Structs
 
-struct Meme{
-    var topText : String?
-    var bottomText : String?
-    var originalImage : UIImage?
-    var memedImage : UIImage?
-    
-    static func empty() -> Meme{
-        let memeEmpty = Meme(topText: nil, bottomText: nil, originalImage: nil, memedImage: nil)
-        return memeEmpty
-    }
-    
-    static func new() -> Meme{
-        let memeNew = Meme(topText: Constants.TextFieldTop.text, bottomText: Constants.TextFieldBottom.text, originalImage: nil, memedImage: nil)
-        return memeNew
-    }
-}
 
-struct Constants {
-    struct TextFieldTop {
-        static let text = "TOP"
-        static let id = "TextFieldTop"
-    }
-    struct TextFieldBottom {
-        static let text = "BOTTOM"
-        static let id = "TextFieldBottom"
-    }
-    
-    static let minimumFontSize : CGFloat = 16.0
-    
-    static func isDefaultText(_ textField: UITextField)-> Bool{
-        var validate = false
-        if textField.restorationIdentifier == Constants.TextFieldTop.id && textField.text?.uppercased() == Constants.TextFieldTop.text{
-            validate = true
-        }
-        if textField.restorationIdentifier == Constants.TextFieldBottom.id && textField.text?.uppercased() == Constants.TextFieldBottom.text{
-            validate = true
-        }
-        return validate
-    }
-}
 
 //MARK: Extension
 

@@ -15,6 +15,8 @@
 		3954909B20B398AC0077CB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3954909920B398AC0077CB1E /* LaunchScreen.storyboard */; };
 		399F846C20C9FBD4005A874D /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399F846B20C9FBD4005A874D /* SentMemesTableViewController.swift */; };
 		39D5F95920CB447600AB0F62 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D5F95820CB447600AB0F62 /* DetailViewController.swift */; };
+		39D7F09C20D6C38500013929 /* StructMeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7F09B20D6C38500013929 /* StructMeme.swift */; };
+		39D7F09E20D6C46700013929 /* StructConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7F09D20D6C46700013929 /* StructConstants.swift */; };
 		39DFEF1820D496D900386E24 /* SentMemesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DFEF1720D496D900386E24 /* SentMemesTableViewCell.swift */; };
 		39F2066820CF23FF00846562 /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2066720CF23FF00846562 /* SentMemesCollectionViewController.swift */; };
 		39F2066A20CF290300846562 /* SentMemesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2066920CF290300846562 /* SentMemesCollectionViewCell.swift */; };
@@ -32,6 +34,8 @@
 		3954909C20B398AC0077CB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		399F846B20C9FBD4005A874D /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
 		39D5F95820CB447600AB0F62 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		39D7F09B20D6C38500013929 /* StructMeme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructMeme.swift; sourceTree = "<group>"; };
+		39D7F09D20D6C46700013929 /* StructConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructConstants.swift; sourceTree = "<group>"; };
 		39DFEF1720D496D900386E24 /* SentMemesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewCell.swift; sourceTree = "<group>"; };
 		39F2066720CF23FF00846562 /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
 		39F2066920CF290300846562 /* SentMemesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 		3954908F20B398AB0077CB1E /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				39D7F09A20D6C35700013929 /* Structs */,
 				3954909020B398AB0077CB1E /* AppDelegate.swift */,
 				3954909220B398AB0077CB1E /* ViewController.swift */,
 				3954909420B398AB0077CB1E /* Main.storyboard */,
@@ -83,6 +88,15 @@
 				39DFEF1720D496D900386E24 /* SentMemesTableViewCell.swift */,
 			);
 			path = MemeMe;
+			sourceTree = "<group>";
+		};
+		39D7F09A20D6C35700013929 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				39D7F09B20D6C38500013929 /* StructMeme.swift */,
+				39D7F09D20D6C46700013929 /* StructConstants.swift */,
+			);
+			path = Structs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,7 +178,9 @@
 				39F2066A20CF290300846562 /* SentMemesCollectionViewCell.swift in Sources */,
 				39D5F95920CB447600AB0F62 /* DetailViewController.swift in Sources */,
 				399F846C20C9FBD4005A874D /* SentMemesTableViewController.swift in Sources */,
+				39D7F09C20D6C38500013929 /* StructMeme.swift in Sources */,
 				39F35A8420B4D36900E9B570 /* TextFieldDelegate.swift in Sources */,
+				39D7F09E20D6C46700013929 /* StructConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
