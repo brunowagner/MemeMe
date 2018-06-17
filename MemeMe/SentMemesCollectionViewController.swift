@@ -30,7 +30,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         if sender.state == UIGestureRecognizerState.began {
             let touchPoint = sender.location(in: myCollectionView)
             if let indexPath = myCollectionView.indexPathForItem(at: touchPoint) {
-                myCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init(rawValue: UInt(indexPath.row)))
+                myCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init(rawValue: UInt(indexPath.item)))
                 editButton.isEnabled = true
             }
         }
