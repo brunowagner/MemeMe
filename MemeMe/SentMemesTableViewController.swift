@@ -56,6 +56,9 @@ class SentMemesTableViewController : UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "SentMemesTableViewCell") as! SentMemesTableViewCell
         cell.myImageView.image = self.memes[indexPath.row].originalImage
+        cell.labelTop.text = self.memes[indexPath.row].topText
+        cell.labelBottom.text = self.memes[indexPath.row].bottomText
+        cell.labelJoin.text = "\(self.memes[indexPath.row].topText ?? "")    \(self.memes[indexPath.row].bottomText ?? "")"
         //configureCell(cell)
         return cell
     }

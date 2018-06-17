@@ -13,4 +13,5 @@ class SentMemesTableViewCell: UITableViewCell {
     @IBOutlet weak var myImageView : UIImageView!
     @IBOutlet weak var labelTop: UILabel!
     @IBOutlet weak var labelBottom: UILabel!
+    @IBOutlet weak var labelJoin: UILabel!
 }

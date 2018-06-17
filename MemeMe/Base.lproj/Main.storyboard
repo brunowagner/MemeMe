@@ -34,13 +34,43 @@
                                                 <constraint firstAttribute="width" constant="124" id="y2u-af-niK"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elJ-LN-8HB">
+                                            <rect key="frame" x="2" y="93" width="124" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2k-wm-2sB">
+                                            <rect key="frame" x="129" y="51" width="186" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEr-qu-X2Z">
+                                            <rect key="frame" x="5" y="10" width="124" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="L2k-wm-2sB" firstAttribute="centerY" secondItem="Z5L-gA-vx6" secondAttribute="centerY" id="4S1-sl-cNl"/>
+                                        <constraint firstItem="elJ-LN-8HB" firstAttribute="trailing" secondItem="dhR-ec-iQf" secondAttribute="trailing" constant="2" id="Dq1-dZ-AZW"/>
+                                        <constraint firstItem="L2k-wm-2sB" firstAttribute="trailing" secondItem="Z5L-gA-vx6" secondAttribute="trailing" constant="-5" id="Yum-jO-g1n"/>
+                                        <constraint firstItem="L2k-wm-2sB" firstAttribute="leading" secondItem="dhR-ec-iQf" secondAttribute="trailing" constant="5" id="bK8-Eb-l0v"/>
+                                        <constraint firstItem="gEr-qu-X2Z" firstAttribute="leading" secondItem="dhR-ec-iQf" secondAttribute="leading" constant="5" id="cRD-uH-WV6"/>
                                         <constraint firstItem="dhR-ec-iQf" firstAttribute="top" secondItem="Z5L-gA-vx6" secondAttribute="top" id="hsH-M9-c1O"/>
+                                        <constraint firstItem="elJ-LN-8HB" firstAttribute="bottom" secondItem="dhR-ec-iQf" secondAttribute="bottom" constant="-10" id="iGp-Hu-nb8"/>
+                                        <constraint firstItem="gEr-qu-X2Z" firstAttribute="trailing" secondItem="dhR-ec-iQf" secondAttribute="trailing" constant="5" id="iwN-cu-6VN"/>
                                         <constraint firstItem="dhR-ec-iQf" firstAttribute="leading" secondItem="Z5L-gA-vx6" secondAttribute="leading" id="uQL-pC-COr"/>
+                                        <constraint firstItem="gEr-qu-X2Z" firstAttribute="top" secondItem="dhR-ec-iQf" secondAttribute="top" constant="10" id="vWW-dQ-AP7"/>
+                                        <constraint firstItem="elJ-LN-8HB" firstAttribute="leading" secondItem="dhR-ec-iQf" secondAttribute="leading" constant="2" id="yGO-eZ-jPG"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="labelBottom" destination="elJ-LN-8HB" id="uCK-dl-Kwg"/>
+                                    <outlet property="labelJoin" destination="L2k-wm-2sB" id="7gb-Uk-Zx6"/>
+                                    <outlet property="labelTop" destination="gEr-qu-X2Z" id="MT3-s8-f4T"/>
                                     <outlet property="myImageView" destination="dhR-ec-iQf" id="6gk-O6-BTk"/>
                                 </connections>
                             </tableViewCell>
