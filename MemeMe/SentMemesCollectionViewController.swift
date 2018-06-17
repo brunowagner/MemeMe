@@ -50,7 +50,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         
         let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: "SentMemesCollectionViewCell", for: indexPath) as! SentMemesCollectionViewCell
         
-        cell.imageView.image = memes[indexPath.row].originalImage
+        cell.myImageView.image = memes[indexPath.row].originalImage
         cell.labelTop.text = memes[indexPath.row].topText
         cell.labelBottom.text = memes[indexPath.row].bottomText
         cell.setFontStyle()
