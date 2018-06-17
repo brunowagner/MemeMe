@@ -19,6 +19,7 @@ class SentMemesTableViewController : UITableViewController{
     
     override func viewDidLoad() {
         self.memes = appDelegation.memes
+        //self.tableView.reloadData()
         editButton.isEnabled = false
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
@@ -45,18 +46,27 @@ class SentMemesTableViewController : UITableViewController{
         return self.memes.count
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        self.tableView.reloadData()
+    }
+ 
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "SentMemesTableViewCell")!
-        cell.imageView!.image = self.memes[indexPath.row].memedImage
-//        configureCell(cell)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "SentMemesTableViewCell") as! SentMemesTableViewCell
+        cell.myImageView.image = self.memes[indexPath.row].originalImage
+        //configureCell(cell)
         return cell
     }
     
-//    func configureCell(_ cell: UITableViewCell){
-//        let width = (view.frame.size.width) / 3
-//        cell.imageView?.frame.size = CGSize(width: width, height: width)
-//        cell.imageView?.contentMode = .scaleAspectFill
-//    }
+    func configureCell(_ cell: SentMemesTableViewCell){
+        let width = (view.frame.size.width - 2) / 3
+        cell.myImageView.frame.size = CGSize(width: width, height: width)
+        //cell.myImageView.contentMode = .scaleAspectFill
+        self.tableView.rowHeight = width
+        print(width)
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         editButton.isEnabled = false
