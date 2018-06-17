@@ -22,11 +22,14 @@ class SentMemesTableViewCell: UITableViewCell {
         NSAttributedStringKey.strokeWidth: -7.0]
     
     func setFontStyle() {
-        self.labelTop.attributedText = NSAttributedString(string: self.labelTop.text!, attributes: memeTextAttributes)
-        self.labelTop.textAlignment = .center
-        self.labelBottom.attributedText = NSAttributedString(string: self.labelBottom.text!, attributes: memeTextAttributes)
-        self.labelBottom.textAlignment = .center
-        self.labelJoin.attributedText = NSAttributedString(string: self.labelJoin.text!, attributes: memeTextAttributes)
-        self.labelJoin.textAlignment = .center
+        setAttributes(label: self.labelTop)
+        setAttributes(label: self.labelBottom)
+        setAttributes(label: self.labelJoin)
+    }
+    
+    private func setAttributes(label : UILabel){
+        label.attributedText = NSAttributedString(string: label.text!, attributes: memeTextAttributes)
+        label.textAlignment = .center
+        label.lineBreakMode = .byTruncatingMiddle
     }
 }

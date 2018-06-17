@@ -5,6 +5,7 @@
 //  Created by Bruno W on 17/06/2018.
 //  Copyright © 2018 Bruno_W. All rights reserved.
 //
+import UIKit
 
 struct Constants {
     struct TextFieldTop {
@@ -28,4 +29,10 @@ struct Constants {
         }
         return validate
     }
+    
+//    struct cellId {
+//        static let setMemesTableView = "TOP"
+//        static let id = "TextFieldTop"
+//    }
+    
 }

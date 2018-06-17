@@ -11,45 +11,35 @@ import UIKit
 
 class SentMemesTableViewController : UITableViewController{
     
+    //MARK: IBOutlets
     @IBOutlet weak var myTableView : UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     
-    let appDelegation = UIApplication.shared.delegate as! AppDelegate
+    //MARK: Properties
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var memes : [Meme]!
     
+    //MARK: viewController`s functions
     override func viewDidLoad() {
-        self.memes = appDelegation.memes
-        //self.tableView.reloadData()
-        editButton.isEnabled = false
-        
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
-        myTableView.addGestureRecognizer(longPress)
+        setMemes(self.appDelegate.memes)
+        enableEditButton(false)
+        activeLongPress()
     }
     
-    @objc func handleLongPress(sender: UILongPressGestureRecognizer){
-        if sender.state == UIGestureRecognizerState.began {
-            let touchPoint = sender.location(in: myTableView)
-            if let indexPath = myTableView.indexPathForRow(at: touchPoint) {
-                myTableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-                editButton.isEnabled = true
-            }
-        }
-    }
-
     override func viewWillAppear(_ animated: Bool) {
-        self.memes = appDelegation.memes
-        editButton.isEnabled=false
-        self.tableView.reloadData()
+        setMemes(self.appDelegate.memes)
+        enableEditButton(false)
+        reloadData()
     }
     
+    //MARK: tableView`s functions
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.memes.count
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        
-        self.tableView.reloadData()
+        reloadData()
     }
  
     
@@ -70,8 +60,6 @@ class SentMemesTableViewController : UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        editButton.isEnabled = false
-
         let datailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         datailViewController.meme = self.memes[indexPath.row]
         navigationController?.pushViewController(datailViewController, animated: true)
@@ -82,13 +70,8 @@ class SentMemesTableViewController : UITableViewController{
             deleteMeme(indexPath)
         }
     }
-    
-    func deleteMeme(_ item: IndexPath){
-        appDelegation.memes.remove(at: item.row)
-        self.memes = appDelegation.memes
-        myTableView.deleteRows(at: [item], with: .automatic)
-    }
-    
+
+    //MARK: Segueway`s functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let memeEditorVC = segue.destination as! ViewController
         
@@ -102,6 +85,39 @@ class SentMemesTableViewController : UITableViewController{
         }
     }
     
+    //MARK: Auxiliaries functions
+    func deleteMeme(_ item: IndexPath){
+        appDelegate.memes.remove(at: item.row)
+        setMemes(appDelegate.memes)
+        myTableView.deleteRows(at: [item], with: .automatic)
+    }
+    
+    func enableEditButton(_ enable: Bool){
+        editButton.isEnabled = enable
+    }
+    
+    func setMemes (_ memeArray: [Meme]){
+        self.memes = memeArray
+    }
+    
+    func activeLongPress(){
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
+        myTableView.addGestureRecognizer(longPress)
+    }
+    
+    @objc func handleLongPress(sender: UILongPressGestureRecognizer){
+        if sender.state == UIGestureRecognizerState.began {
+            let touchPoint = sender.location(in: myTableView)
+            if let indexPath = myTableView.indexPathForRow(at: touchPoint) {
+                myTableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+                enableEditButton(true)
+            }
+        }
+    }
+    
+    func reloadData(){
+        self.tableView?.reloadData()
+    }
 
 
 }
