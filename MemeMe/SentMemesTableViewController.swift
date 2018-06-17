@@ -67,9 +67,6 @@ class SentMemesTableViewController : UITableViewController{
     func configureCell(_ cell: SentMemesTableViewCell){
         let width = (view.frame.size.width - 2) / 3
         cell.myImageView.frame.size = CGSize(width: width, height: width)
-        //cell.myImageView.contentMode = .scaleAspectFill
-        self.tableView.rowHeight = width
-        print(width)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
