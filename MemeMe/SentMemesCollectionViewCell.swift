@@ -34,4 +34,10 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
         self.labelBottom.lineBreakMode = .byTruncatingMiddle
     }
     
+//    override var isHighlighted:Bool{
+//        didSet{
+//            print("Highlighted is set \(isHighlighted)")
+//        }
+//    }
+    
 }

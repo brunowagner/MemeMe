@@ -31,10 +31,23 @@ class SentMemesCollectionViewController: UICollectionViewController {
             let touchPoint = sender.location(in: myCollectionView)
             if let indexPath = myCollectionView.indexPathForItem(at: touchPoint) {
                 myCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init(rawValue: UInt(indexPath.item)))
+//                self.collectionView?.cellForItem(at: indexPath)?.isHighlighted = true
                 editButton.isEnabled = true
             }
         }
     }
+    
+//    override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+//        let cell = self.collectionView?.cellForItem(at: indexPath)
+//        if (cell?.isSelected)!{
+//            cell?.layer.borderWidth = 2.0
+//            cell?.layer.borderColor = UIColor.gray.cgColor
+//        }else{
+//            cell?.layer.borderWidth = 0
+//        }
+//
+//    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.memes = self.appDelegate.memes

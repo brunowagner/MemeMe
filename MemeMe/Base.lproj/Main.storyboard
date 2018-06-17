@@ -258,7 +258,7 @@
             </objects>
             <point key="canvasLocation" x="-1823" y="904"/>
         </scene>
-        <!--Sent Memes Collection View Controller-->
+        <!--Sent Meme-->
         <scene sceneID="uaZ-wq-8fu">
             <objects>
                 <collectionViewController id="Ncq-dk-jdF" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -324,7 +324,7 @@
                             <outlet property="delegate" destination="Ncq-dk-jdF" id="fT2-RY-g9v"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="7iZ-f2-C5n">
+                    <navigationItem key="navigationItem" title="Sent Meme" id="7iZ-f2-C5n">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="Efg-Sf-VNl">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" identifier="SegueEditMeme" id="vPh-61-aar"/>
@@ -382,7 +382,7 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ik9-Pr-ZIG"/>
-        <segue reference="BW1-PT-Wcn"/>
+        <segue reference="2Mo-NZ-T86"/>
+        <segue reference="z7g-Ha-yo9"/>
     </inferredMetricsTieBreakers>
 </document>
