@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 class SentMemesCollectionViewController: UICollectionViewController {
-    
     //MARK: IBOutlets
     @IBOutlet weak var myCollectionView : UICollectionView!
     @IBOutlet weak var editButton: UIBarButtonItem!
@@ -53,7 +52,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
         detailVc.meme = memes[indexPath.row]
         navigationController?.pushViewController(detailVc, animated: true)
     }
-    
 
     //MARK: Segueway`s functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -98,24 +96,11 @@ class SentMemesCollectionViewController: UICollectionViewController {
             let touchPoint = sender.location(in: myCollectionView)
             if let indexPath = myCollectionView.indexPathForItem(at: touchPoint) {
                 myCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init(rawValue: UInt(indexPath.item)))
-                //                self.collectionView?.cellForItem(at: indexPath)?.isHighlighted = true
                 enableEditButton(true)
             }
         }
     }
-    
-    
-    //    override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-    //        let cell = self.collectionView?.cellForItem(at: indexPath)
-    //        if (cell?.isSelected)!{
-    //            cell?.layer.borderWidth = 2.0
-    //            cell?.layer.borderColor = UIColor.gray.cgColor
-    //        }else{
-    //            cell?.layer.borderWidth = 0
-    //        }
-    //
-    //    }
-    
+
     func reloadData(){
         self.collectionView?.reloadData()
     }

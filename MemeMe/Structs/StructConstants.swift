@@ -28,11 +28,5 @@ struct Constants {
             validate = true
         }
         return validate
-    }
-    
-//    struct cellId {
-//        static let setMemesTableView = "TOP"
-//        static let id = "TextFieldTop"
-//    }
-    
+    }  
 }
