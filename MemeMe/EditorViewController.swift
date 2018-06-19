@@ -98,8 +98,9 @@ class EditorViewController: UIViewController {
         //save meme
         meme = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memed)
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memes.append(meme)
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.memes.append(meme)
+        Meme.Data.saveMeme(meme)
     }
     
     //MARK: Functions to keep code clean and

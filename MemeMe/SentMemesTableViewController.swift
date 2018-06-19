@@ -41,18 +41,13 @@ class SentMemesTableViewController : UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "SentMemesTableViewCell") as! SentMemesTableViewCell
+        
         cell.myImageView.image = self.memes[indexPath.row].originalImage
         cell.labelTop.text = self.memes[indexPath.row].topText
         cell.labelBottom.text = self.memes[indexPath.row].bottomText
         cell.labelJoin.text = "\(self.memes[indexPath.row].topText ?? "")    \(self.memes[indexPath.row].bottomText ?? "")"
         cell.setFontStyle()
-        //configureCell(cell)
         return cell
-    }
-    
-    func configureCell(_ cell: SentMemesTableViewCell){
-        let width = (view.frame.size.width - 2) / 3
-        cell.myImageView.frame.size = CGSize(width: width, height: width)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -83,13 +78,15 @@ class SentMemesTableViewController : UITableViewController{
     
     //MARK: Auxiliaries functions
     func deleteMeme(_ item: IndexPath){
-        appDelegate.memes.remove(at: item.row)
+        //appDelegate.memes.remove(at: item.row)
+        Meme.Data.deleteMeme(at: item.row)
         setMemes(appDelegate.memes)
         myTableView.deleteRows(at: [item], with: .automatic)
     }
     
     func setMemes (_ memeArray: [Meme]){
-        self.memes = memeArray
+        self.memes = Meme.Data.getMemes()
+        //self.memes = memeArray
     }
     
     func reloadData(){
