@@ -11,7 +11,6 @@ import UIKit
 class SentMemesCollectionViewController: UICollectionViewController {
     //MARK: IBOutlets
     @IBOutlet weak var myCollectionView : UICollectionView!
-    @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var flowLayout : UICollectionViewFlowLayout!
     
     //MARK: Properties
@@ -22,12 +21,10 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         setMemes(self.appDelegate.memes)
         configureFlow()
-        activeLongPress()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         setMemes(self.appDelegate.memes)
-        enableEditButton(false)
         reloadData()
     }
     
@@ -68,10 +65,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     
     //MARK: Auxiliaries functions
-    func enableEditButton(_ enable: Bool){
-        editButton.isEnabled = enable
-    }
-    
     func setMemes (_ memeArray: [Meme]){
         self.memes = memeArray
     }
@@ -84,21 +77,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: width, height: width)
-    }
-    
-    func activeLongPress(){
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
-        myCollectionView.addGestureRecognizer(longPress)
-    }
-    
-    @objc func handleLongPress(sender: UILongPressGestureRecognizer){
-        if sender.state == UIGestureRecognizerState.began {
-            let touchPoint = sender.location(in: myCollectionView)
-            if let indexPath = myCollectionView.indexPathForItem(at: touchPoint) {
-                myCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init(rawValue: UInt(indexPath.item)))
-                enableEditButton(true)
-            }
-        }
     }
 
     func reloadData(){

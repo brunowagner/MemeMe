@@ -325,11 +325,6 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Sent Meme" id="7iZ-f2-C5n">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="Efg-Sf-VNl">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="SegueEditMeme" id="vPh-61-aar"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Irp-kG-BQR">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" identifier="SegueNewMeme" id="z7g-Ha-yo9"/>
@@ -337,7 +332,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="editButton" destination="Efg-Sf-VNl" id="y8p-sf-lAa"/>
                         <outlet property="flowLayout" destination="2XV-Ea-d26" id="LR5-uN-Edd"/>
                         <outlet property="myCollectionView" destination="6Xf-Yy-TEy" id="1YG-Kg-V9V"/>
                         <segue destination="81O-eJ-p6h" kind="show" identifier="SegueDetail" id="2Mo-NZ-T86"/>
@@ -382,7 +376,7 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ik9-Pr-ZIG"/>
-        <segue reference="xB6-ok-DZy"/>
+        <segue reference="2Mo-NZ-T86"/>
+        <segue reference="z7g-Ha-yo9"/>
     </inferredMetricsTieBreakers>
 </document>
