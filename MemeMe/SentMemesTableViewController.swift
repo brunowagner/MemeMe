@@ -15,17 +15,16 @@ class SentMemesTableViewController : UITableViewController{
     @IBOutlet weak var myTableView : UITableView!
     
     //MARK: Properties
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var memes : [Meme]!
     
     //MARK: viewController`s functions
     override func viewDidLoad() {
-        setMemes(self.appDelegate.memes)
+        setMemes()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setMemes(self.appDelegate.memes)
-        reloadData()
+        setMemes()
+        reloadTable()
     }
     
     //MARK: tableView`s functions
@@ -35,10 +34,9 @@ class SentMemesTableViewController : UITableViewController{
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        reloadData()
+        reloadTable()
     }
  
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "SentMemesTableViewCell") as! SentMemesTableViewCell
         
@@ -61,35 +59,19 @@ class SentMemesTableViewController : UITableViewController{
             deleteMeme(indexPath)
         }
     }
-
-    //MARK: Segueway`s functions
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let memeEditorVC = segue.destination as! EditorViewController
-        
-        switch segue.identifier {
-
-        case "SegueEditMeme":
-            let item = myTableView.indexPathForSelectedRow?.row
-            memeEditorVC.meme = self.memes[item!]
-            break
-        default: break //do not set meme in viewController
-        }
-    }
     
     //MARK: Auxiliaries functions
     func deleteMeme(_ item: IndexPath){
-        //appDelegate.memes.remove(at: item.row)
         Meme.Data.deleteMeme(at: item.row)
-        setMemes(appDelegate.memes)
+        setMemes()
         myTableView.deleteRows(at: [item], with: .automatic)
     }
     
-    func setMemes (_ memeArray: [Meme]){
+    func setMemes (){
         self.memes = Meme.Data.getMemes()
-        //self.memes = memeArray
     }
     
-    func reloadData(){
+    func reloadTable(){
         self.tableView?.reloadData()
     }
 

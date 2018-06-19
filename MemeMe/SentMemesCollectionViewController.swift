@@ -15,18 +15,17 @@ class SentMemesCollectionViewController: UICollectionViewController {
     @IBOutlet weak var flowLayout : UICollectionViewFlowLayout!
     
     //MARK: Properties
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var memes : [Meme]!
     
     //MARK: viewController`s functions
     override func viewDidLoad() {
-        setMemes(self.appDelegate.memes)
+        setMemes()
         configureFlow()
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        setMemes(self.appDelegate.memes)
-        reloadData()
+        setMemes()
+        reloadCollection()
     }
     
     //MARK: collectionView`s functions
@@ -50,24 +49,10 @@ class SentMemesCollectionViewController: UICollectionViewController {
         detailVc.meme = memes[indexPath.row]
         navigationController?.pushViewController(detailVc, animated: true)
     }
-
-    //MARK: Segueway`s functions
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let memeEditorVC = segue.destination as! EditorViewController
-        
-        switch segue.identifier {
-            
-        case "SegueEditMeme":
-            let indexPath = self.collectionView!.indexPathsForSelectedItems![0]
-            memeEditorVC.meme = self.memes[indexPath.row]
-            break
-        default: break //do not set meme in viewController
-        }
-    }
     
     //MARK: Auxiliaries functions
-    func setMemes (_ memeArray: [Meme]){
-        self.memes = memeArray
+    func setMemes (){
+        self.memes = Meme.Data.getMemes()
     }
     
     func configureFlow(){
@@ -79,7 +64,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         flowLayout.itemSize = CGSize(width: width, height: width)
     }
 
-    func reloadData(){
+    func reloadCollection(){
         self.collectionView?.reloadData()
     }
 }
