@@ -15,21 +15,10 @@ class SentMemesTableViewCell: UITableViewCell {
     @IBOutlet weak var labelBottom: UILabel!
     @IBOutlet weak var labelJoin: UILabel!
     
-    let memeTextAttributes : [NSAttributedStringKey : Any] = [
-        NSAttributedStringKey.strokeColor: UIColor.black,
-        NSAttributedStringKey.foregroundColor: UIColor.white,
-        NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 15)!,
-        NSAttributedStringKey.strokeWidth: -7.0]
-    
-    func setFontStyle() {
-        setAttributes(label: self.labelTop)
-        setAttributes(label: self.labelBottom)
-        setAttributes(label: self.labelJoin)
+    func setFontAttributes() {
+        Cell.setTextAttributes(label: self.labelTop)
+        Cell.setTextAttributes(label: self.labelBottom)
+        Cell.setTextAttributes(label: self.labelJoin)
     }
-    
-    private func setAttributes(label : UILabel){
-        label.attributedText = NSAttributedString(string: label.text!, attributes: memeTextAttributes)
-        label.textAlignment = .center
-        label.lineBreakMode = .byTruncatingMiddle
-    }
+
 }

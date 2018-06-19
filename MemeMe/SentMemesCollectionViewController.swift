@@ -39,7 +39,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         cell.myImageView.image = memes[indexPath.row].originalImage
         cell.labelTop.text = memes[indexPath.row].topText
         cell.labelBottom.text = memes[indexPath.row].bottomText
-        cell.setFontStyle()
+        cell.setFontAttributes()
         
         return cell
     }

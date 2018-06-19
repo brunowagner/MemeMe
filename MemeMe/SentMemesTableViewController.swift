@@ -44,7 +44,7 @@ class SentMemesTableViewController : UITableViewController{
         cell.labelTop.text = self.memes[indexPath.row].topText
         cell.labelBottom.text = self.memes[indexPath.row].bottomText
         cell.labelJoin.text = "\(self.memes[indexPath.row].topText ?? "")    \(self.memes[indexPath.row].bottomText ?? "")"
-        cell.setFontStyle()
+        cell.setFontAttributes()
         return cell
     }
     
