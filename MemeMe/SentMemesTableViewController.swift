@@ -13,7 +13,6 @@ class SentMemesTableViewController : UITableViewController{
     
     //MARK: IBOutlets
     @IBOutlet weak var myTableView : UITableView!
-    @IBOutlet weak var editButton: UIBarButtonItem!
     
     //MARK: Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -22,13 +21,10 @@ class SentMemesTableViewController : UITableViewController{
     //MARK: viewController`s functions
     override func viewDidLoad() {
         setMemes(self.appDelegate.memes)
-        enableEditButton(false)
-        activeLongPress()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setMemes(self.appDelegate.memes)
-        enableEditButton(false)
         reloadData()
     }
     
@@ -92,27 +88,8 @@ class SentMemesTableViewController : UITableViewController{
         myTableView.deleteRows(at: [item], with: .automatic)
     }
     
-    func enableEditButton(_ enable: Bool){
-        editButton.isEnabled = enable
-    }
-    
     func setMemes (_ memeArray: [Meme]){
         self.memes = memeArray
-    }
-    
-    func activeLongPress(){
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
-        myTableView.addGestureRecognizer(longPress)
-    }
-    
-    @objc func handleLongPress(sender: UILongPressGestureRecognizer){
-        if sender.state == UIGestureRecognizerState.began {
-            let touchPoint = sender.location(in: myTableView)
-            if let indexPath = myTableView.indexPathForRow(at: touchPoint) {
-                myTableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-                enableEditButton(true)
-            }
-        }
     }
     
     func reloadData(){
