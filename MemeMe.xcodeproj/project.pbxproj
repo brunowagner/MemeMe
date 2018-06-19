@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3905CE7D20BCAC3C0077D9AA /* viewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3905CE7C20BCAC3C0077D9AA /* viewControllerExtension.swift */; };
+		3905CE7D20BCAC3C0077D9AA /* EditorViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3905CE7C20BCAC3C0077D9AA /* EditorViewControllerExtension.swift */; };
 		3954909120B398AB0077CB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3954909020B398AB0077CB1E /* AppDelegate.swift */; };
-		3954909320B398AB0077CB1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3954909220B398AB0077CB1E /* ViewController.swift */; };
+		3954909320B398AB0077CB1E /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3954909220B398AB0077CB1E /* EditorViewController.swift */; };
 		3954909620B398AB0077CB1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3954909420B398AB0077CB1E /* Main.storyboard */; };
 		3954909820B398AC0077CB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3954909720B398AC0077CB1E /* Assets.xcassets */; };
 		3954909B20B398AC0077CB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3954909920B398AC0077CB1E /* LaunchScreen.storyboard */; };
@@ -24,10 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3905CE7C20BCAC3C0077D9AA /* viewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewControllerExtension.swift; sourceTree = "<group>"; };
+		3905CE7C20BCAC3C0077D9AA /* EditorViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewControllerExtension.swift; sourceTree = "<group>"; };
 		3954908D20B398AB0077CB1E /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3954909020B398AB0077CB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3954909220B398AB0077CB1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3954909220B398AB0077CB1E /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		3954909520B398AB0077CB1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3954909720B398AC0077CB1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3954909A20B398AC0077CB1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,13 +74,13 @@
 			children = (
 				39D7F09A20D6C35700013929 /* Structs */,
 				3954909020B398AB0077CB1E /* AppDelegate.swift */,
-				3954909220B398AB0077CB1E /* ViewController.swift */,
+				3954909220B398AB0077CB1E /* EditorViewController.swift */,
 				3954909420B398AB0077CB1E /* Main.storyboard */,
 				3954909720B398AC0077CB1E /* Assets.xcassets */,
 				3954909920B398AC0077CB1E /* LaunchScreen.storyboard */,
 				3954909C20B398AC0077CB1E /* Info.plist */,
 				39F35A8320B4D36900E9B570 /* TextFieldDelegate.swift */,
-				3905CE7C20BCAC3C0077D9AA /* viewControllerExtension.swift */,
+				3905CE7C20BCAC3C0077D9AA /* EditorViewControllerExtension.swift */,
 				399F846B20C9FBD4005A874D /* SentMemesTableViewController.swift */,
 				39D5F95820CB447600AB0F62 /* DetailViewController.swift */,
 				39F2066720CF23FF00846562 /* SentMemesCollectionViewController.swift */,
@@ -170,9 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3905CE7D20BCAC3C0077D9AA /* viewControllerExtension.swift in Sources */,
+				3905CE7D20BCAC3C0077D9AA /* EditorViewControllerExtension.swift in Sources */,
 				39F2066820CF23FF00846562 /* SentMemesCollectionViewController.swift in Sources */,
-				3954909320B398AB0077CB1E /* ViewController.swift in Sources */,
+				3954909320B398AB0077CB1E /* EditorViewController.swift in Sources */,
 				3954909120B398AB0077CB1E /* AppDelegate.swift in Sources */,
 				39DFEF1820D496D900386E24 /* SentMemesTableViewCell.swift in Sources */,
 				39F2066A20CF290300846562 /* SentMemesCollectionViewCell.swift in Sources */,

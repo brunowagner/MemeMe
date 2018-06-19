@@ -9,13 +9,9 @@
 
 import UIKit
 
-//MARK: Structs
-
-
-
 //MARK: Extension
 
-extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension EditorViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     //MARK: Functions of UIImagePickerController protocol
     

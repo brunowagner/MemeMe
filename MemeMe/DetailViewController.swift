@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let editorViewController = segue.destination as! ViewController
+        let editorViewController = segue.destination as! EditorViewController
         editorViewController.meme = self.meme
     }
 

@@ -14,7 +14,6 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelTop: UILabel!
     @IBOutlet weak var labelBottom: UILabel!
 
-    
     let memeTextAttributes : [NSAttributedStringKey : Any] = [
         NSAttributedStringKey.strokeColor: UIColor.black,
         NSAttributedStringKey.foregroundColor: UIColor.white,
@@ -31,11 +30,6 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         label.lineBreakMode = .byTruncatingMiddle
     }
-    
-//    override var isHighlighted:Bool{
-//        didSet{
-//            print("Highlighted is set \(isHighlighted)")
-//        }
-//    }
+
     
 }

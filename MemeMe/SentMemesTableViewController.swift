@@ -69,7 +69,7 @@ class SentMemesTableViewController : UITableViewController{
 
     //MARK: Segueway`s functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let memeEditorVC = segue.destination as! ViewController
+        let memeEditorVC = segue.destination as! EditorViewController
         
         switch segue.identifier {
 

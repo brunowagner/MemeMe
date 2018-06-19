@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 class SentMemesCollectionViewController: UICollectionViewController {
+    
     //MARK: IBOutlets
     @IBOutlet weak var myCollectionView : UICollectionView!
     @IBOutlet weak var flowLayout : UICollectionViewFlowLayout!
@@ -52,7 +53,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
     //MARK: Segueway`s functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let memeEditorVC = segue.destination as! ViewController
+        let memeEditorVC = segue.destination as! EditorViewController
         
         switch segue.identifier {
             
@@ -72,8 +73,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     func configureFlow(){
         let space : CGFloat = 1.0
         let width = (view.frame.size.width - (2 * space)) / 3.0
-        //let height = (view.frame.size.height - space)/4.0
-        
+
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: width, height: width)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EditorViewController: UIViewController {
     
     //MARK: IBOutlets
     
@@ -38,8 +38,6 @@ class ViewController: UIViewController {
         configureUI(textField: textFieldTop, whitId: Constants.TextFieldTop.id)
         configureUI(textField: textFieldBottom, whitId: Constants.TextFieldBottom.id)
         initialMeme()
-//        initialState(textField: textFieldTop, withText: Constants.TextFieldTop.text, withId: Constants.TextFieldTop.id)
-//        initialState(textField: textFieldBottom, withText: Constants.TextFieldBottom.text, withId: Constants.TextFieldBottom.id)
     }
 
     
@@ -78,9 +76,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender : UIBarButtonItem){
-//        meme = Meme.empty()
-//        initialState(textField: textFieldTop, withText: Constants.TextFieldTop.text, withId: Constants.TextFieldTop.id)
-//        initialState(textField: textFieldBottom, withText: Constants.TextFieldBottom.text, withId: Constants.TextFieldBottom.id)
         self.dismiss(animated: true, completion: nil)
     }
     
