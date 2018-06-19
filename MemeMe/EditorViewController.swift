@@ -25,11 +25,6 @@ class EditorViewController: UIViewController {
     public var meme : Meme = Meme.new()//Meme.empty()
     public var newMeme : Bool = true
     private let textFieldDelegate = TextFieldDelegate()
-    private let memeTextAttributes:[String:Any] = [
-        NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
-        NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
-        NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedStringKey.strokeWidth.rawValue: -7.0]
     
     //MARK: Functions of ViewController
     
@@ -40,7 +35,6 @@ class EditorViewController: UIViewController {
         initialMeme()
     }
 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         shareButton.isEnabled = imagePickerView.image == nil ? false : true
@@ -98,8 +92,6 @@ class EditorViewController: UIViewController {
         //save meme
         meme = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memed)
         
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        appDelegate.memes.append(meme)
         Meme.Data.saveMeme(meme)
     }
     
@@ -107,7 +99,7 @@ class EditorViewController: UIViewController {
     
     private func configureUI(textField : UITextField, whitId id: String){
         textField.delegate = textFieldDelegate
-        textField.defaultTextAttributes = memeTextAttributes
+        textField.defaultTextAttributes = Constants.TextAttributes.textField()
         textField.backgroundColor = UIColor.clear
         textField.textAlignment = .center
         textField.borderStyle = .none

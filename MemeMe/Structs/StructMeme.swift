@@ -13,6 +13,7 @@ struct Meme{
     var originalImage : UIImage?
     var memedImage : UIImage?
     
+
     
     
     static func empty() -> Meme{
@@ -40,4 +41,6 @@ struct Meme{
             return self.appDelegate.memes
         }
     }
+    
+    
 }

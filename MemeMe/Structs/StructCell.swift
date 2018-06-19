@@ -10,14 +10,8 @@ import Foundation
 import UIKit
 
 struct Cell{
-    private static let memeTextAttributes : [NSAttributedStringKey : Any] = [
-        NSAttributedStringKey.strokeColor: UIColor.black,
-        NSAttributedStringKey.foregroundColor: UIColor.white,
-        NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 15)!,
-        NSAttributedStringKey.strokeWidth: -7.0]
-    
     static func setTextAttributes(label:UILabel){
-        label.attributedText = NSAttributedString(string: label.text!, attributes: memeTextAttributes)
+        label.attributedText = NSAttributedString(string: label.text!, attributes:Constants.TextAttributes.label())
         label.textAlignment = .center
         label.lineBreakMode = .byTruncatingMiddle
     }

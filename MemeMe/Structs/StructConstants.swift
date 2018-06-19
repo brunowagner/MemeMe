@@ -28,5 +28,31 @@ struct Constants {
             validate = true
         }
         return validate
-    }  
+    }
+    
+    struct TextAttributes{
+        private static let strokeColor = UIColor.black
+        private static let foregroundColor = UIColor.white
+        private static let fontName = "HelveticaNeue-CondensedBlack"
+        private static let fontsize = 40
+        private static let strokeWidth = -7.0
+        
+        static func label()->[NSAttributedStringKey : Any]{
+            return [
+                NSAttributedStringKey.strokeColor: self.strokeColor,
+                NSAttributedStringKey.foregroundColor: self.foregroundColor,
+                NSAttributedStringKey.font: UIFont(name: self.fontName, size: 15)!,
+                NSAttributedStringKey.strokeWidth: self.strokeWidth
+            ]
+        }
+        
+        static func textField() -> [String:Any]{
+            return [
+                NSAttributedStringKey.strokeColor.rawValue: self.strokeColor,
+                NSAttributedStringKey.foregroundColor.rawValue: self.foregroundColor,
+                NSAttributedStringKey.font.rawValue: UIFont(name: self.fontName, size: 40)!,
+                NSAttributedStringKey.strokeWidth.rawValue: self.strokeWidth
+            ]
+        }
+    }
 }
