@@ -28,12 +28,14 @@ class DetailViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = chose
     }
     
+    @IBAction func editAction(_ sender: Any) {
+        performSegue(withIdentifier: "SegueDetailToEditor", sender: sender)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let editorViewController = segue.destination as! ViewController
         editorViewController.meme = self.meme
     }
-    
-    
-    
 
 }

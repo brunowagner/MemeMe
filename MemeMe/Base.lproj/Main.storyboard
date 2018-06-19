@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="105"/>
+            <point key="canvasLocation" x="996" y="130"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="vsK-Jf-5yV">
@@ -359,17 +359,18 @@
                     <navigationItem key="navigationItem" title="Title" id="aTD-sC-Agf">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="d41-ZE-fil">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="SegueDatailToEditor" id="5Ao-b7-WDe"/>
+                                <action selector="editAction:" destination="81O-eJ-p6h" id="n2B-Lj-vSU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="f1n-Yj-EzB" id="cz3-V0-JlZ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="SegueDetailToEditor" id="gzf-Ph-scS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FmD-M7-8bV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="838"/>
+            <point key="canvasLocation" x="173" y="1031"/>
         </scene>
     </scenes>
     <resources>
@@ -378,6 +379,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ik9-Pr-ZIG"/>
-        <segue reference="xB6-ok-DZy"/>
+        <segue reference="gzf-Ph-scS"/>
     </inferredMetricsTieBreakers>
 </document>
