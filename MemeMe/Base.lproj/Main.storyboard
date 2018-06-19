@@ -356,6 +356,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gFi-N3-igG"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="aTD-sC-Agf">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="d41-ZE-fil">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="5Ao-b7-WDe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="f1n-Yj-EzB" id="cz3-V0-JlZ"/>
                     </connections>
@@ -370,7 +377,7 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ik9-Pr-ZIG"/>
-        <segue reference="xB6-ok-DZy"/>
+        <segue reference="2Mo-NZ-T86"/>
+        <segue reference="5Ao-b7-WDe"/>
     </inferredMetricsTieBreakers>
 </document>
