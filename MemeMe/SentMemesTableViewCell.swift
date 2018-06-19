@@ -20,5 +20,4 @@ class SentMemesTableViewCell: UITableViewCell {
         Cell.setTextAttributes(label: self.labelBottom)
         Cell.setTextAttributes(label: self.labelJoin)
     }
-
 }

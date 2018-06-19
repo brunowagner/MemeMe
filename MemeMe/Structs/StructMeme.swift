@@ -8,14 +8,13 @@
 import UIKit
 
 struct Meme{
+    //MARK: Properties
     var topText : String?
     var bottomText : String?
     var originalImage : UIImage?
     var memedImage : UIImage?
-    
 
-    
-    
+    //MARK: Functions to init meme
     static func empty() -> Meme{
         let memeEmpty = Meme(topText: nil, bottomText: nil, originalImage: nil, memedImage: nil)
         return memeEmpty
@@ -26,6 +25,7 @@ struct Meme{
         return memeNew
     }
     
+    //MARK: Functions about mame data
     struct Data {
         private static let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
@@ -41,6 +41,4 @@ struct Meme{
             return self.appDelegate.memes
         }
     }
-    
-    
 }

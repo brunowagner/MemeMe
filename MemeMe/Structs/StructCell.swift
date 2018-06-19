@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 struct Cell{
+    
     static func setTextAttributes(label:UILabel){
         label.attributedText = NSAttributedString(string: label.text!, attributes:Constants.TextAttributes.label())
         label.textAlignment = .center
         label.lineBreakMode = .byTruncatingMiddle
     }
-    
 }

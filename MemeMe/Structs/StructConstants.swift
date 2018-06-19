@@ -8,15 +8,7 @@
 import UIKit
 
 struct Constants {
-    struct TextFieldTop {
-        static let text = "TOP"
-        static let id = "TextFieldTop"
-    }
-    struct TextFieldBottom {
-        static let text = "BOTTOM"
-        static let id = "TextFieldBottom"
-    }
-    
+
     static let minimumFontSize : CGFloat = 16.0
     
     static func isDefaultText(_ textField: UITextField)-> Bool{
@@ -28,6 +20,16 @@ struct Constants {
             validate = true
         }
         return validate
+    }
+    
+    //MARK: sub structs
+    struct TextFieldTop {
+        static let text = "TOP"
+        static let id = "TextFieldTop"
+    }
+    struct TextFieldBottom {
+        static let text = "BOTTOM"
+        static let id = "TextFieldBottom"
     }
     
     struct TextAttributes{

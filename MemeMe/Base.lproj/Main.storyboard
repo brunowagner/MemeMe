@@ -356,7 +356,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gFi-N3-igG"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="aTD-sC-Agf">
+                    <navigationItem key="navigationItem" title="Detail" id="aTD-sC-Agf">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="d41-ZE-fil">
                             <connections>
                                 <action selector="editAction:" destination="81O-eJ-p6h" id="n2B-Lj-vSU"/>
@@ -379,6 +379,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2Mo-NZ-T86"/>
-        <segue reference="z7g-Ha-yo9"/>
+        <segue reference="gzf-Ph-scS"/>
     </inferredMetricsTieBreakers>
 </document>
