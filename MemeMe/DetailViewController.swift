@@ -27,5 +27,13 @@ class DetailViewController: UIViewController {
     func hideTabBar(_ chose: Bool){
         self.tabBarController?.tabBar.isHidden = chose
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let editorViewController = segue.destination as! ViewController
+        editorViewController.meme = self.meme
+    }
+    
+    
+    
 
 }
